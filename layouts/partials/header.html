@@ -83,14 +83,14 @@
                             {{ end }}
                         </ul>
                     {{ end }}
-                    {{ if .Site.Menus.icon }}
-                        <ul class="nav navbar-nav navbar-right">
-                            {{ range sort .Site.Menus.icon }}
+                    <ul class="nav navbar-nav navbar-right">
+                        {{ with  .Site.Menus.icon }}
+                            {{ range sort . }}
                                 <li class="navbar-icon"><a href="{{ .URL }}"><i class="{{ .Name }}"></i></a></li>
                             {{ end }}
-                            {{ partial "toggle"}}
-                        </ul>
-                    {{ end }}
+                        {{ end }}
+                        {{ partial "toggle"}}
+                    </ul>
                 </div>
             </div>
         </nav>
